@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Application To-Do List pour organiser ses tâches." />
+  <title>TaskFlow | To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="TaskFlow accueil">
+        <span class="brand-mark">✓</span>
+        <span>taskflow<span class="brand-dot">.</span></span>
+      </a>
+      <span class="date-label" id="todayLabel"></span>
+    </header>
+
+    <section class="welcome">
+      <p class="eyebrow">YOUR PERSONAL SPACE</p>
+      <h1>Make room for<br><span>what matters.</span></h1>
+      <p class="subtitle">Organise tes tâches, avance à ton rythme.</p>
+    </section>
+
+    <section class="dashboard" aria-label="Résumé des tâches">
+      <article class="stat-card">
+        <span class="stat-icon purple">▤</span>
+        <div><p class="stat-number" id="totalCount">0</p><p class="stat-caption">Total des tâches</p></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon green">✓</span>
+        <div><p class="stat-number" id="doneCount">0</p><p class="stat-caption">Terminées</p></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon orange">◷</span>
+        <div><p class="stat-number" id="leftCount">0</p><p class="stat-caption">À faire</p></div>
+      </article>
+    </section>
+
+    <section class="task-panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">MY WORKSPACE</p><h2>Mes tâches</h2></div>
+        <span class="task-counter" id="taskCounter">0 tâche</span>
+      </div>
+
+      <form id="taskForm" class="add-form">
+        <label class="sr-only" for="taskInput">Nouvelle tâche</label>
+        <input id="taskInput" type="text" maxlength="100" placeholder="Ajouter une nouvelle tâche..." autocomplete="off" required />
+        <button class="add-button" type="submit"><span>＋</span> Ajouter</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filtrer les tâches">
+          <button class="filter active" data-filter="all" type="button">Toutes</button>
+          <button class="filter" data-filter="active" type="button">À faire</button>
+          <button class="filter" data-filter="completed" type="button">Terminées</button>
+        </div>
+        <button id="clearCompleted" class="clear-button" type="button">Effacer les terminées</button>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✦</div>
+        <h3>Aucune tâche pour le moment</h3>
+        <p>Ajoute ta première tâche et commence à t’organiser.</p>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-info"><span>Progression</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      </div>
+    </section>
+    <footer>Made with <span>♥</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
