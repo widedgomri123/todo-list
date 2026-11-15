@@ -21,7 +21,7 @@ A modern and responsive web application for managing daily tasks, developed usin
 
 1. Clone this repository:
    ```bash
-   git clone YOUR_REPOSITORY_URL
+   git clone https://github.com/widedgomri123/todo-list.git
    ```
 2. Open the project folder.
 3. Open `index.html` in your browser.
